@@ -30,11 +30,11 @@ allocate(SUMMARY2(mdl,2))
 
 ! time series length: 256 hertz AD * 10 hours * min/hour * sec/min
 write (*,*), '---------------------------------------------------------------------'
-write (*,*), 'Select S/R (hertz) [ex:256,1024,4096]'
+write (*,*), 'Enter a S/R (hertz) [ex:256,1024,4096]'
 read *, tsfrq               ! time series sampling frequency (hertz=1/sec)
 write (*,*),''
 write (*,*), '---------------------------------------------------------------------'
-write (*,*), 'Select Timeseries duration (sec) [ex: 1hour=3600s]'
+write (*,*), 'Enter a Timeseries duration (sec) [ex: 1hour=3600s]'
 read *, sec
 
 
@@ -86,6 +86,7 @@ npnt  = tsfrq*sec
    write (*,'(A,f10.2,A)'), 'Z3D file size : ' , fileSize , ' MB'
    write (*,fmt=99), 'Duration      : ',d,' day(s) ',h,'h',m,'m',s,'s'
    write (*,*), '---------------------------------------------------------------------'
+   read (*,*)
    
 deallocate(SUMMARY1)
 deallocate(SUMMARY2)
